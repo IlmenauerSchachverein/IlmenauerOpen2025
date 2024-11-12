@@ -58,10 +58,10 @@ Google Maps: [https://maps.app.goo.gl/rZMkYBArJcAaS7RU7](https://maps.app.goo.gl
 | 2. Platz     | Pokal + 150 € |
 | 3. Platz     | Pokal + 100 € |
 | 4. Platz     | 50 €          |
-| U 1800 DWZ   | 50 €          |
-| U 1600 DWZ   | 50 €          |
-| U 1400 DWZ   | 50 €          |
-| U 1200 DWZ   | 50 €          |
+| U 1800 TWZ   | 50 €          |
+| U 1600 TWZ   | 50 €          |
+| U 1400 TWZ   | 50 €          |
+| U 1200 TWZ   | 50 €          |
 | 1. Platz U18 | Pokal         |
 | 1. Ilmenauer | Pokal         |
 | Held         | Pokal         |
