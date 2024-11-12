@@ -1,10 +1,8 @@
-# 1. Ilmenauer Open 2024
-
-Bitte das Git clonen mit:
-
-```bash
-git clone https://github.com/IlmenauerSchachverein/IlmenauerOpen2024.git
-```
+---
+title: Ausschreibung - Open
+type: docs
+toc: false
+---
 
 ## Datum
 
@@ -44,6 +42,8 @@ Das Schachturnier beeinflusst die DWZ (Deutsche Wertungszahl) und die ELO (FIDE)
 | 03.11.2024 | 09:00        | 7. Runde      |
 | 03.11.2024 | anschließend | Siegerehrung  |
 
+- Die Karenzzeit beträgt 30 min.
+
 ## Preise
 
 - Volle Preise ab 40 Teilnehmern
@@ -67,13 +67,15 @@ Das Schachturnier beeinflusst die DWZ (Deutsche Wertungszahl) und die ELO (FIDE)
 
 - 7 Runden Schweizer System
 - 2 Stunden + 30 Sekunden pro Zug
+- Es besteht schreibpflicht
+- Das Original ist abzugeben. Der Durchschlag kann behalten werden.
 
 ## Startgeld
 
 - Die Anmeldung inkl. Geldeingang muss bis zum 15.10.2024 erfolgt sein
 - Maximal 80 Teilnehmer (Reihenfolge der Anmeldungen, Nachrückliste)
 - Mit der Anmeldung wird einer Photoerlaubnis zugestimmt.
-- Formular für die Anmeldung: [Anmeldung](https://ilmenauerschachverein.github.io/IlmenauerOpen2024/)
+- Formular für die Anmeldung: [Anmeldung](https://open24.ilmenauer-schachverein.de/anmeldung/)
 
 ## Kontakt
 
@@ -83,3 +85,8 @@ Das 1. Ilmenauer Open 2024 und das 1. Ilmenauer Open Blitz 2024 sind Turniere, d
 
 - E-Mail: [info@ilmenauer-schachverein.de](mailto:info@ilmenauer-schachverein.de)
 - Adresse: Ehrenbergstraße 29, 98693 Ilmenau
+
+## Anmeldung Formular
+
+<iframe src="https://open24.ilmenauer-schachverein.de/Registrierung/open2024/" width="100%" height="2000px" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" scrolling="no"></iframe>
+<br>
