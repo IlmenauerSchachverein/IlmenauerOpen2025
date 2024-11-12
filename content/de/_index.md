@@ -1,14 +1,25 @@
 ---
-title: 1. Ilmenauer Open 2024
+title: 2. Ilmenauer Open 2025
 toc: false
 type: docs
 ---
+<style>
+  @media (max-width: 600px) {
+    .desktop-only {
+      display: none;
+    }
+  }
+</style>
 
-Herzlich willkommen zum ersten Ilmenauer Open 2024! Wir freuen uns, Sie beim diesjährigen Schachturnier
-begrüßen zu dürfen. Hier finden Sie alle relevanten Informationen, von den Spielzeiten bis zu den
-Teilnehmerdetails. Bitte zögern Sie nicht, sich bei Fragen oder Anliegen an unser Organisationsteam zu
-wenden. Wir wünschen Ihnen nicht nur spannende Partien, sondern auch eine angenehme Zeit voller
-Schachbegeisterung. Viel Spaß beim Ilmenauer Open 2024!
+
+<div style="display: flex; align-items: center;">
+  <div style="flex: 1; padding-right: 20px;">
+    <p>Herzlich willkommen zum ersten Ilmenauer Open 2025! Wir freuen uns, Sie beim diesjährigen Schachturnier begrüßen zu dürfen. Hier finden Sie alle relevanten Informationen, von den Spielzeiten bis zu den Teilnehmerdetails. Bitte zögern Sie nicht, sich bei Fragen oder Anliegen an unser Organisationsteam zu wenden. Wir wünschen Ihnen nicht nur spannende Partien, sondern auch eine angenehme Zeit voller Schachbegeisterung. Viel Spaß beim Ilmenauer Open 2025!</p>
+  </div>
+  <div style="flex-shrink: 0;">
+    <img src="/IlmenauerSV.png" alt="Ilmenauer Schachverein Logo" style="max-width: 200px;" class="desktop-only">
+  </div>
+</div>
 
 ## Open
 
