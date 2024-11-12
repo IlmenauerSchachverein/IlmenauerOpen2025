@@ -5,10 +5,9 @@ toc: false
 ---
 
 {{< cards >}}
-{{< card link="../runde" title="Runde" >}}
-{{< card link="../rangliste" title="Rangliste"  >}}
-{{< card link="https://chess-results.com/tnr824805.aspx" title="Chess-Results"  >}}
-
+{{< card link="blitz/runde" title="Runde" >}}
+{{< card link="blitz/rangliste" title="Rangliste"  >}}
+{{< card link="https://chess-results.com/tnr1059056.aspx?lan=0" title="Chess-Results"  >}}
 {{< /cards >}}
 
 ## Datum
