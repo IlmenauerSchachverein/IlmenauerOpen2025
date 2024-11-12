@@ -23,6 +23,11 @@ type: docs
   {{< card link="runde/5" title="Paarungen Runde 5" icon="user" >}}
   {{< card link="runde/6" title="Paarungen Runde 6" icon="user" >}}
   {{< card link="runde/7" title="Paarungen Runde 7" icon="user" >}}
+  {{< card link="runde/8" title="Paarungen Runde 8" icon="user" >}}
+  {{< card link="runde/9" title="Paarungen Runde 9" icon="user" >}}
+  {{< card link="runde/10" title="Paarungen Runde 10" icon="user" >}}
+  {{< card link="runde/11" title="Paarungen Runde 11" icon="user" >}}
+  {{< card link="runde/12" title="Paarungen Runde 12" icon="user" >}}
 {{< /cards >}}
 
 ## Rangliste aller Runden 
@@ -35,6 +40,11 @@ type: docs
   {{< card link="rangliste/5" title="Rangliste nach Runde 5" icon="user" >}}
   {{< card link="rangliste/6" title="Rangliste nach Runde 6" icon="user" >}}
   {{< card link="rangliste/7" title="Rangliste nach Runde 7" icon="user" >}}
+  {{< card link="rangliste/8" title="Rangliste nach Runde 8" icon="user" >}}
+  {{< card link="rangliste/9" title="Rangliste nach Runde 9" icon="user" >}}
+  {{< card link="rangliste/10" title="Rangliste nach Runde 10" icon="user" >}}
+  {{< card link="rangliste/11" title="Rangliste nach Runde 11" icon="user" >}}
+  {{< card link="rangliste/12" title="Rangliste nach Runde 12" icon="user" >}}
 {{< /cards >}}
 
 
