@@ -86,6 +86,12 @@ type: docs
 {{< card link="blitz/runde/5" title="Paarungen Runde 5" icon="user" >}}
 {{< card link="blitz/runde/6" title="Paarungen Runde 6" icon="user" >}}
 {{< card link="blitz/runde/7" title="Paarungen Runde 7" icon="user" >}}
+{{< card link="blitz/runde/8" title="Paarungen Runde 8" icon="user" >}}
+{{< card link="blitz/runde/9" title="Paarungen Runde 9" icon="user" >}}
+{{< card link="blitz/runde/10" title="Paarungen Runde 10" icon="user" >}}
+{{< card link="blitz/runde/11" title="Paarungen Runde 11" icon="user" >}}
+{{< card link="blitz/runde/12" title="Paarungen Runde 12" icon="user" >}}
+
 {{< /cards >}}
 
 ### Rangliste aller Runden
@@ -98,6 +104,13 @@ type: docs
 {{< card link="blitz/rangliste/5" title="Rangliste nach Runde 5" icon="user" >}}
 {{< card link="blitz/rangliste/6" title="Rangliste nach Runde 6" icon="user" >}}
 {{< card link="blitz/rangliste/7" title="Rangliste nach Runde 7" icon="user" >}}
+{{< card link="blitz/rangliste/8" title="Rangliste nach Runde 8" icon="user" >}}
+{{< card link="blitz/rangliste/9" title="Rangliste nach Runde 9" icon="user" >}}
+{{< card link="blitz/rangliste/10" title="Rangliste nach Runde 10" icon="user" >}}
+{{< card link="blitz/rangliste/11" title="Rangliste nach Runde 11" icon="user" >}}
+{{< card link="blitz/rangliste/12" title="Rangliste nach Runde 12" icon="user" >}}
+
+
 {{< /cards >}}
 
 ### Sondertabellen
