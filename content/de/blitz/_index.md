@@ -11,6 +11,11 @@ type: docs
   {{< card link="https://chess-results.com/tnr1059056.aspx?lan=0" title="Chess-Results" icon="user" target="_blank">}}
 {{< /cards >}}
 
+
+{{< callout type="info" >}}
+ Die Tabellen werden erst **nach** dem Blitzturnier nachgetragen. Am 01.11.2025, im Verlauf der fünften Runde des Opens, werden die Tabellen aktualisiert. Bitte nutzen Sie während des Turniers den externen Dienst [chess-results.com](https://chess-results.com/tnr1059056.aspx?lan=0) für aktuelle Informationen.
+{{< /callout >}}
+
 ## Paarungen aller Runden 
 
 {{< cards >}}
