@@ -22,7 +22,7 @@ Google Maps: [https://maps.app.goo.gl/rZMkYBArJcAaS7RU7](https://maps.app.goo.gl
 - BIC: HELADEF1ILK
 - Kreditinstitut: Sparkasse Arnstadt-Ilmenau
 - Verwendungszweck: Spielername, Verein, OPEN2025
-- 45 € (10 € Rabatt für Rentner, Studenten – mit Nachweis, U18; Geldeingang bis 13. Oktober)
+- 45 € (10 € Rabatt für Rentner, Studenten – mit Nachweis, U18)
 - 10 € Aufschlag für Überweisungen nach dem 01. Oktober 2025
 
 ## Auswertung
