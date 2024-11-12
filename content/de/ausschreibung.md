@@ -72,24 +72,27 @@ Google Maps: [https://maps.app.goo.gl/rZMkYBArJcAaS7RU7](https://maps.app.goo.gl
 - 2 Stunden + 30 Sekunden pro Zug
 - Es besteht schreibpflicht
 - Das Original ist abzugeben. Der Durchschlag kann behalten werden.
+- Die Karrenzzeit beträgt 30 min ab Rundenbeginn. 
 
 ## Startgeld
 
-- Die Anmeldung inkl. Geldeingang muss bis zum 15.10.2024 erfolgt sein
+- Die Anmeldung inkl. Geldeingang muss bis zum 12.10.2025 erfolgt sein
 - Maximal 80 Teilnehmer (Reihenfolge der Anmeldungen, Nachrückliste)
 - Mit der Anmeldung wird einer Photoerlaubnis zugestimmt.
-- Formular für die Anmeldung: [Anmeldung](https://open24.ilmenauer-schachverein.de/anmeldung/)
+- Formular für die Anmeldung: [Anmeldung](https://open25.ilmenauer-schachverein.de/anmeldung/)
 
 ## Kontakt
 
-Das 1. Ilmenauer Open 2024 und das 1. Ilmenauer Open Blitz 2024 sind Turniere, die vom [Ilmenauer SV](https://ilmenauer-schachverein.de) organisiert werden.
+Das 2. Ilmenauer Open 2025 und das 2. Ilmenauer Open Blitz 2025 sind Turniere, die vom [Ilmenauer SV](https://ilmenauer-schachverein.de) organisiert werden.
 
 ### Kontaktmöglichkeiten:
 
 - E-Mail: [info@ilmenauer-schachverein.de](mailto:info@ilmenauer-schachverein.de)
 - Adresse: Ehrenbergstraße 29, 98693 Ilmenau
 
-## Anmeldung Formular
+<!-- ## Anmeldung Formular
 
 <iframe src="https://open24.ilmenauer-schachverein.de/Registrierung/open2024/" width="100%" height="2000px" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" scrolling="no"></iframe>
 <br>
+
+-->
