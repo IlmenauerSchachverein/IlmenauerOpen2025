@@ -13,19 +13,22 @@ toc: false
 Sparkassenhalle (Schülerfreizeitzentrum)  
 Am Großen Teich 2, 98693 Ilmenau
 
+Google Maps: [https://maps.app.goo.gl/rZMkYBArJcAaS7RU7](https://maps.app.goo.gl/rZMkYBArJcAaS7RU7)
+
 ## Bankverbindung
 
 - Ilmenauer Schachverein
 - IBAN: DE25 8405 1010 1124 0002 47
 - BIC: HELADEF1ILK
 - Kreditinstitut: Sparkasse Arnstadt-Ilmenau
-- Verwendungszweck: Spielername, Verein, OPEN2024
-- 35 € (10 € Rabatt für Rentner, Studenten – mit Nachweis, U18; Geldeingang bis 13. Oktober)
-- 10 € Aufschlag für Überweisungen nach dem 01. Oktober 2024
+- Verwendungszweck: Spielername, Verein, OPEN2025
+- 45 € (10 € Rabatt für Rentner, Studenten – mit Nachweis, U18; Geldeingang bis 13. Oktober)
+- 10 € Aufschlag für Überweisungen nach dem 01. Oktober 2025
 
 ## Auswertung
 
-Das Schachturnier beeinflusst die DWZ (Deutsche Wertungszahl) und die ELO (FIDE) Zahl der Teilnehmer.
+- Das Schachturnier beeinflusst die DWZ (Deutsche Wertungszahl) und die ELO (FIDE) Zahl der Teilnehmer.
+- Jeder Spieler muss zum Zeitpunkt der Anmeldung über eine FIDE-ID verfügen. [FIDE-ID beantragen](https://www.schachbund.de/fide-identifikationsnummer.html)
 
 ## Zeitplan
 
