@@ -20,8 +20,11 @@ type: docs
     <img src="/IlmenauerSV.png" alt="Ilmenauer Schachverein Logo" style="max-width: 200px;" class="desktop-only">
   </div>
 </div>
-
+{{< callout type="info" >}}
+ Sollten Sie Fehler finden, Fragen haben oder sonstige Anliegen, wenden Sie sich bitte zeitnah an uns.
+{{< /callout >}}
 ## Open
+
 
 ### Wichtige Informationen
 
