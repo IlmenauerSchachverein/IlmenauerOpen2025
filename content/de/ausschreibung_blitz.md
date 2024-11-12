@@ -13,7 +13,7 @@ toc: false
 
 ## Datum
 
-- 01.11.2024 ab 21:00
+- 31.10.2025 ab 21:00
 
 ## Spiellokal
 
