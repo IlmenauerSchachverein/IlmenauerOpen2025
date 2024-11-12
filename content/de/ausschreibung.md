@@ -6,7 +6,7 @@ toc: false
 
 ## Datum
 
-31.10.2024 – 03.11.2024
+30.10.2025 – 02.11.2025
 
 ## Spiellokal
 
@@ -34,16 +34,16 @@ Google Maps: [https://maps.app.goo.gl/rZMkYBArJcAaS7RU7](https://maps.app.goo.gl
 
 | Datum      | Uhrzeit      | Ereignis      |
 | ---------- | ------------ | ------------- |
-| 31.10.2024 | Bis 09:30    | Anmeldung     |
-| 31.10.2024 | 10:00        | 1. Runde      |
-| 31.10.2024 | 16:00        | 2. Runde      |
-| 01.11.2024 | 09:00        | 3. Runde      |
-| 01.11.2024 | 15:00        | 4. Runde      |
-| 01.11.2024 | 21:00        | Blitz Turnier |
-| 02.11.2024 | 10:00        | 5. Runde      |
-| 02.11.2024 | 16:00        | 6. Runde      |
-| 03.11.2024 | 09:00        | 7. Runde      |
-| 03.11.2024 | anschließend | Siegerehrung  |
+| 30.10.2025 | Bis 09:30    | Anmeldung     |
+| 30.10.2025 | 09:30        | 1. Runde      |
+| 30.10.2025 | 16:30        | 2. Runde      |
+| 31.11.2025 | 09:30        | 3. Runde      |
+| 31.11.2025 | 16:30        | 4. Runde      |
+| 31.11.2025 | 21:00        | Blitz Turnier |
+| 01.11.2025 | 09:30        | 5. Runde      |
+| 01.11.2025 | 16:30        | 6. Runde      |
+| 02.11.2025 | 09:30        | 7. Runde      |
+| 02.11.2025 | anschließend | Siegerehrung  |
 
 - Die Karenzzeit beträgt 30 min.
 
@@ -77,7 +77,7 @@ Google Maps: [https://maps.app.goo.gl/rZMkYBArJcAaS7RU7](https://maps.app.goo.gl
 ## Startgeld
 
 - Die Anmeldung inkl. Geldeingang muss bis zum 12.10.2025 erfolgt sein
-- Maximal 80 Teilnehmer (Reihenfolge der Anmeldungen, Nachrückliste)
+- Maximal 80 Teilnehmer (Reihenfolge der Anmeldungen)
 - Mit der Anmeldung wird einer Photoerlaubnis zugestimmt.
 - Formular für die Anmeldung: [Anmeldung](https://open25.ilmenauer-schachverein.de/anmeldung/)
 
