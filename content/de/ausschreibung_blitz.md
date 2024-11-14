@@ -12,7 +12,7 @@ toc: false
 
 ## Datum
 
-- 31.10.2025 ab 21:00
+- 31.10.2025 ab 18:00
 
 ## Spiellokal
 
