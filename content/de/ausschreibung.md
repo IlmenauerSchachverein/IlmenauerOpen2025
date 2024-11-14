@@ -81,6 +81,10 @@ Google Maps: [https://maps.app.goo.gl/rZMkYBArJcAaS7RU7](https://maps.app.goo.gl
 - Mit der Anmeldung wird einer Photoerlaubnis zugestimmt.
 - Formular für die Anmeldung: [Anmeldung](https://open25.ilmenauer-schachverein.de/anmeldung/)
 
+## Rückerstattung
+
+Sollte sich ein Spieler vom Turnier vor Turnierbeginn abmelden, wird eine Bearbeitungsgebühr von 10 Euro erhoben und der restliche Beitrag nach dem Turnier zurücküberwiesen.
+
 ## Kontakt
 
 Das 2. Ilmenauer Open 2025 und das 2. Ilmenauer Open Blitz 2025 sind Turniere, die vom [Ilmenauer SV](https://ilmenauer-schachverein.de) organisiert werden.
