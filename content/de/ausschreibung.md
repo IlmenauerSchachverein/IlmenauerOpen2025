@@ -34,15 +34,15 @@ Google Maps: [https://maps.app.goo.gl/rZMkYBArJcAaS7RU7](https://maps.app.goo.gl
 
 | Datum      | Uhrzeit      | Ereignis      |
 | ---------- | ------------ | ------------- |
-| 30.10.2025 | Bis 09:30    | Anmeldung     |
-| 30.10.2025 | 09:30        | 1. Runde      |
-| 30.10.2025 | 16:30        | 2. Runde      |
-| 31.11.2025 | 09:30        | 3. Runde      |
-| 31.11.2025 | 16:30        | 4. Runde      |
-| 31.11.2025 | 21:00        | Blitz Turnier |
-| 01.11.2025 | 09:30        | 5. Runde      |
-| 01.11.2025 | 16:30        | 6. Runde      |
-| 02.11.2025 | 09:30        | 7. Runde      |
+| 30.10.2025 | Bis 08:00    | Anmeldung     |
+| 30.10.2025 | 08:30        | 1. Runde      |
+| 30.10.2025 | 13:30        | 2. Runde      |
+| 31.11.2025 | 08:30        | 3. Runde      |
+| 31.11.2025 | 13:30        | 4. Runde      |
+| 31.11.2025 | 18:00        | Blitz Turnier |
+| 01.11.2025 | 08:30        | 5. Runde      |
+| 01.11.2025 | 13:30        | 6. Runde      |
+| 02.11.2025 | 08:30        | 7. Runde      |
 | 02.11.2025 | anschließend | Siegerehrung  |
 
 - Die Karenzzeit beträgt 30 min.
