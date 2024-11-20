@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Anmeldungen ISST 2025</title>
+    <title>Anmeldungen Open 2025</title>
     <style>
         table {
             width: 90%;
@@ -36,7 +36,7 @@
     </style>
 </head>
 <body>
-    <h1>Anmeldungen ISST 2025</h1>
+    <h1>Anmeldungen Open 2025</h1>
 
     <?php
     // Pfad zur CSV-Datei
@@ -110,6 +110,7 @@
                 echo '<td>' . htmlspecialchars($data[8]) . '</td>'; // Rabattberechtigung
                 echo '<td>' . htmlspecialchars($data[9]) . '</td>'; // Bestätigung
                 echo '<td>' . htmlspecialchars($data[10]) . '</td>'; // AGB Zustimmung
+                echo '<td>' . htmlspecialchars($data[11]) . '</td>'; // Blitzturnier
                 echo "<td>{$chessResultsMatch}</td>"; // ChessResults-Spalte mit 'X' bei Übereinstimmung
                 echo '</tr>';
             }
