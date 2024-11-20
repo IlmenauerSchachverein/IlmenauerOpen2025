@@ -41,96 +41,42 @@
     <?php
     // Pfad zur CSV-Datei
     $csvFile = '/var/private/isv/open25.csv';
-    $csvNames = [];
 
-    // Öffne die CSV-Datei und extrahiere die Namen im Format "Nachname, Vorname"
-    if (file_exists($csvFile)) {
-        if (($handle = fopen($csvFile, 'r')) !== FALSE) {
-            while (($data = fgetcsv($handle, 1000, ',')) !== FALSE) {
-                // Kombiniere Nachname und Vorname im Format "Nachname, Vorname"
-                $csvNames[] = trim($data[3]) . ', ' . trim($data[2]); // Annahme: Nachname in $data[3] und Vorname in $data[2]
-            }
-            fclose($handle);
-        }
-    } else {
+    if (!file_exists($csvFile)) {
         echo '<p style="color: red; text-align: center;">Fehler: Die CSV-Datei existiert nicht.</p>';
+        exit;
     }
 
-    // Lade die HTML-Inhalte von der Webseite
-    $url = 'https://chess-results.com/tnr1056124.aspx?lan=0';
-    $html = file_get_contents($url);
-    $webNames = [];
-
-    if ($html !== FALSE) {
-        // Nutze DOMDocument und DOMXPath, um die Namen aus der Webtabelle zu extrahieren
-        $dom = new DOMDocument;
-        @$dom->loadHTML($html);
-        $xpath = new DOMXPath($dom);
-
-        // Finde alle Namen in der Tabelle und speichere sie im Array $webNames
-        $rows = $xpath->query("//table[@class='CRs1']//tr");
-        foreach ($rows as $index => $row) {
-            if ($index === 0) continue; // Überspringe die Header-Zeile
-            $cells = $row->getElementsByTagName('td');
-            if ($cells->length >= 4) {
-                $webNames[] = trim($cells->item(3)->nodeValue); // Name in der vierten Zelle im Format "Nachname, Vorname"
-            }
-        }
-    } else {
-        echo '<p style="color: red; text-align: center;">Fehler: Die Webtabelle konnte nicht geladen werden.</p>';
+    // CSV-Datei öffnen
+    $handle = fopen($csvFile, 'r');
+    if (!$handle) {
+        echo '<p style="color: red; text-align: center;">Fehler: Die CSV-Datei konnte nicht geöffnet werden.</p>';
+        exit;
     }
 
-    // Finde Namen, die auf ChessResults gemeldet sind, aber nicht in der CSV
-    $notInCsv = array_diff($webNames, $csvNames);
-
-    // Tabelle erstellen und CSV-Daten anzeigen
+    // Tabelle starten
     echo '<table>';
-    echo '<tr><th>Datum</th><th>Zeit</th><th>Vorname</th><th>Nachname</th><th>Verein</th><th>Geburtsdatum</th><th>Handynummer</th><th>Email</th><th>Rabattberechtigung</th><th>Bestätigung</th><th>AGB Zustimmung</th><th>ChessResults</th></tr>';
+    echo '<tr><th>Vorname</th><th>Nachname</th><th>Verein</th><th>Geburtsdatum</th><th>Handynummer</th><th>E-Mail</th><th>Rabatt</th><th>Bestätigung</th><th>Blitzturnier</th><th>AGB Zustimmung</th></tr>';
 
-    if (file_exists($csvFile)) {
-        if (($handle = fopen($csvFile, 'r')) !== FALSE) {
-            while (($data = fgetcsv($handle, 1000, ',')) !== FALSE) {
-                // Erstelle den vollständigen Namen im Format "Nachname, Vorname" aus der CSV
-                $fullName = trim($data[3]) . ', ' . trim($data[2]);
-
-                // Prüfe, ob der Name in der Webliste vorkommt
-                $highlightClass = in_array($fullName, $webNames) ? 'highlight' : '';
-                $chessResultsMatch = in_array($fullName, $webNames) ? 'X' : '';
-
-                // Zeile in die Tabelle ausgeben
-                echo "<tr class='{$highlightClass}'>";
-                echo '<td>' . htmlspecialchars($data[0]) . '</td>'; // Datum
-                echo '<td>' . htmlspecialchars($data[1]) . '</td>'; // Zeit
-                echo '<td>' . htmlspecialchars($data[2]) . '</td>'; // Vorname
-                echo '<td>' . htmlspecialchars($data[3]) . '</td>'; // Nachname
-                echo '<td>' . htmlspecialchars($data[4]) . '</td>'; // Verein
-                echo '<td>' . htmlspecialchars($data[5]) . '</td>'; // Geburtsdatum
-                echo '<td>' . htmlspecialchars($data[6]) . '</td>'; // Handynummer
-                echo '<td>' . htmlspecialchars($data[7]) . '</td>'; // Email
-                echo '<td>' . htmlspecialchars($data[8]) . '</td>'; // Rabattberechtigung
-                echo '<td>' . htmlspecialchars($data[9]) . '</td>'; // Bestätigung
-                echo '<td>' . htmlspecialchars($data[10]) . '</td>'; // AGB Zustimmung
-                echo '<td>' . htmlspecialchars($data[11]) . '</td>'; // Blitzturnier
-                echo "<td>{$chessResultsMatch}</td>"; // ChessResults-Spalte mit 'X' bei Übereinstimmung
-                echo '</tr>';
-            }
-            fclose($handle);
-        }
+    // Zeilen aus der CSV-Datei auslesen
+    while (($data = fgetcsv($handle, 1000, ',')) !== FALSE) {
+        echo '<tr>';
+        echo '<td>' . htmlspecialchars($data[0]) . '</td>'; // Vorname
+        echo '<td>' . htmlspecialchars($data[1]) . '</td>'; // Nachname
+        echo '<td>' . htmlspecialchars($data[2]) . '</td>'; // Verein
+        echo '<td>' . htmlspecialchars($data[3]) . '</td>'; // Geburtsdatum
+        echo '<td>' . htmlspecialchars($data[4]) . '</td>'; // Handynummer
+        echo '<td>' . htmlspecialchars($data[5]) . '</td>'; // E-Mail
+        echo '<td>' . htmlspecialchars($data[6]) . '</td>'; // Rabatt
+        echo '<td>' . htmlspecialchars($data[7]) . '</td>'; // Bestätigung
+        echo '<td>' . (isset($data[8]) && $data[8] === 'on' ? 'Ja' : 'Nein') . '</td>'; // Blitzturnier
+        echo '<td>' . htmlspecialchars($data[9]) . '</td>'; // AGB Zustimmung
+        echo '</tr>';
     }
 
+    // Tabelle schließen
     echo '</table>';
-
-    // Liste der Namen, die auf ChessResults stehen, aber nicht in der CSV-Datei sind
-    echo '<h2>Auf ChessResults gemeldet, aber nicht in der CSV-Datei:</h2>';
-    if (!empty($notInCsv)) {
-        echo '<ul>';
-        foreach ($notInCsv as $name) {
-            echo "<li>{$name}</li>";
-        }
-        echo '</ul>';
-    } else {
-        echo '<p>Alle gemeldeten Spieler sind auch in der CSV-Datei vorhanden.</p>';
-    }
+    fclose($handle);
     ?>
 </body>
 </html>
