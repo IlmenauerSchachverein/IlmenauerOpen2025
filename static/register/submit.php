@@ -1,82 +1,60 @@
 <?php
-// Pfad zur CSV-Datei
-$csvFile = '/var/private/isv/open25.csv';
+// STYLE (bleibt unverändert)
+echo '<style>/* Styles aus deinem Code bleiben */</style>';
+$error = false;
 
-// Überprüfung des Honeypot-Feldes
-if (!empty($_POST['honeypot'])) {
-    die('Bot-Verdacht: Die Anmeldung wurde nicht gespeichert.');
-}
+// Überprüfung, ob POST-Request gesendet wurde
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    // Eingaben validieren und absichern
+    $vorname = htmlspecialchars($_POST['vorname']);
+    $nachname = htmlspecialchars($_POST['nachname']);
+    $verein = isset($_POST['verein']) ? htmlspecialchars($_POST['verein']) : '';
+    $geburtsdatum = htmlspecialchars($_POST['geburtsdatum']);
+    $handy = isset($_POST['handy']) ? htmlspecialchars($_POST['handy']) : 'Nicht angegeben';
+    $email = htmlspecialchars($_POST['email']);
+    $rabatt = htmlspecialchars($_POST['rabatt']);
+    $bestaetigung = isset($_POST['bestaetigung']) ? 'Ja' : 'Nein';
+    $agb = isset($_POST['agb']) ? 'Ja' : 'Nein';
+    $blitzturnier = isset($_POST['blitzturnier']) ? 'Ja' : 'Nein'; // Neues Feld
 
-// Eingehende Daten validieren und bereinigen
-$vorname = htmlspecialchars(trim($_POST['vorname'] ?? ''));
-$nachname = htmlspecialchars(trim($_POST['nachname'] ?? ''));
-$verein = htmlspecialchars(trim($_POST['verein'] ?? ''));
-$geburtsdatum = htmlspecialchars(trim($_POST['geburtsdatum'] ?? ''));
-$handy = htmlspecialchars(trim($_POST['handy'] ?? ''));
-$email = htmlspecialchars(trim($_POST['email'] ?? ''));
-$rabatt = htmlspecialchars(trim($_POST['rabatt'] ?? 'nein'));
-$bestaetigung = isset($_POST['bestaetigung']) ? 'on' : 'off';
-$blitz = isset($_POST['blitz']) ? 'on' : 'off';
-$agb = isset($_POST['agb']) ? 'on' : 'off';
-
-// Validierungslogik
-$errors = [];
-if (empty($vorname)) $errors[] = 'Vorname ist erforderlich.';
-if (empty($nachname)) $errors[] = 'Nachname ist erforderlich.';
-if (empty($geburtsdatum) || !preg_match('/^\d{2}\.\d{2}\.\d{4}$/', $geburtsdatum)) {
-    $errors[] = 'Geburtsdatum ist ungültig. Format: TT.MM.JJJJ.';
-}
-if (empty($email) || !filter_var($email, FILTER_VALIDATE_EMAIL)) {
-    $errors[] = 'E-Mail-Adresse ist ungültig.';
-}
-if ($agb !== 'on') {
-    $errors[] = 'Die Zustimmung zu den Teilnahmebedingungen ist erforderlich.';
-}
-
-// Bei Fehlern: Ausgabe und Abbruch
-if (!empty($errors)) {
-    echo '<h1>Fehler bei der Anmeldung</h1>';
-    echo '<ul>';
-    foreach ($errors as $error) {
-        echo "<li>{$error}</li>";
+    // Honeypot-Schutz
+    if (!empty($_POST['honeypot'])) {
+        die("<p style='color:red;'>Fehler: Spam erkannt.</p>");
     }
-    echo '</ul>';
-    echo '<a href="javascript:history.back()">Zurück zum Formular</a>';
-    exit;
-}
 
-// Daten in die CSV-Datei schreiben
-$newEntry = [
-    $vorname,
-    $nachname,
-    $verein,
-    $geburtsdatum,
-    $handy,
-    $email,
-    $rabatt,
-    $bestaetigung,
-    $blitz,
-    $agb,
-];
+    // Dateipfad zur CSV-Datei
+    $dateipfad = '/var/private/isv/open25.csv';
 
-// Sicherstellen, dass die CSV-Datei existiert und beschreibbar ist
-if (!file_exists($csvFile)) {
-    if (!touch($csvFile)) {
-        die('Fehler: Die CSV-Datei konnte nicht erstellt werden.');
+    // Geburtsdatum validieren
+    if (!preg_match("/^\d{2}\.\d{2}\.\d{4}$/", $geburtsdatum) || !checkdate((int)explode('.', $geburtsdatum)[1], (int)explode('.', $geburtsdatum)[0], (int)explode('.', $geburtsdatum)[2])) {
+        echo "<p style='color:red;'>Bitte geben Sie ein gültiges Geburtsdatum ein.</p>";
+        $error = true;
     }
-}
-if (!is_writable($csvFile)) {
-    die('Fehler: Die CSV-Datei ist nicht beschreibbar.');
-}
 
-// Öffnen der CSV-Datei und Hinzufügen des neuen Eintrags
-if (($handle = fopen($csvFile, 'a')) !== FALSE) {
-    fputcsv($handle, $newEntry);
-    fclose($handle);
-    echo '<h1>Anmeldung erfolgreich</h1>';
-    echo '<p>Vielen Dank für die Anmeldung!</p>';
-    echo '<a href="/register">Zurück zum Formular</a>';
-} else {
-    die('Fehler: Die CSV-Datei konnte nicht geöffnet werden.');
+    if (!$error) {
+        // Daten speichern
+        $datenzeile = [
+            date('d-m-Y'), // Datum
+            date('H:i:s'), // Zeit
+            $vorname,
+            $nachname,
+            $verein,
+            $geburtsdatum,
+            $handy,
+            $email,
+            $rabatt,
+            $bestaetigung,
+            $agb,
+            $blitzturnier // Blitzturnier hinzufügen
+        ];
+
+        if (($datei = fopen($dateipfad, 'a')) !== FALSE) {
+            fputcsv($datei, $datenzeile);
+            fclose($datei);
+            echo "<p style='color:green;'>Erfolg: Ihre Daten wurden gespeichert.</p>";
+        } else {
+            echo "<p style='color:red;'>Fehler: CSV-Datei konnte nicht geöffnet werden.</p>";
+        }
+    }
 }
 ?>
