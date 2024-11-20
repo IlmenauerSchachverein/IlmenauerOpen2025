@@ -30,6 +30,9 @@
         tr:hover {
             background-color: #e9e9e9;
         }
+        .highlight {
+            background-color: #ffcccc; /* Hellrot für Übereinstimmungen */
+        }
     </style>
 </head>
 <body>
@@ -43,6 +46,31 @@
     if (!file_exists($csvFile)) {
         echo '<p style="color: red; text-align: center;">Fehler: Die CSV-Datei existiert nicht.</p>';
         exit;
+    }
+
+    // Chess-Results-Daten abrufen
+    $chessResultsUrl = 'https://chess-results.com/tnr1056111.aspx?lan=0';
+    $html = file_get_contents($chessResultsUrl);
+
+    if ($html === FALSE) {
+        echo '<p style="color: red; text-align: center;">Fehler: Die Chess-Results-Seite konnte nicht geladen werden.</p>';
+        $webNames = [];
+    } else {
+        // Chess-Results-Daten parsen
+        $dom = new DOMDocument;
+        @$dom->loadHTML($html);
+        $xpath = new DOMXPath($dom);
+
+        // Tabelle parsen: Suche alle Spieler in der entsprechenden Tabelle
+        $webNames = [];
+        $rows = $xpath->query("//table[contains(@class, 'CRs')]//tr");
+        foreach ($rows as $index => $row) {
+            if ($index === 0) continue; // Header-Zeile überspringen
+            $cells = $row->getElementsByTagName('td');
+            if ($cells->length >= 4) {
+                $webNames[] = trim($cells->item(3)->nodeValue); // Spielername aus der vierten Zelle
+            }
+        }
     }
 
     // Tabelle anzeigen
@@ -60,6 +88,7 @@
         <th>Bestätigung</th>
         <th>AGB</th>
         <th>Blitzturnier</th>
+        <th>ChessResults</th>
     </tr>';
 
     // Datei öffnen und Zeilen auslesen
@@ -71,6 +100,12 @@
                 echo '<p style="color: red;">Fehler: Eine Zeile in der CSV-Datei hat nicht genügend Spalten.</p>';
                 continue;
             }
+
+            // Vollständigen Namen erstellen
+            $fullName = trim($data[3]) . ', ' . trim($data[2]); // Nachname, Vorname
+
+            // Chess-Results-Abgleich
+            $chessResultsMatch = in_array($fullName, $webNames) ? 'X' : '';
 
             // Daten aus der CSV extrahieren
             $datum = htmlspecialchars($data[0]);
@@ -87,7 +122,7 @@
             $blitzturnier = htmlspecialchars($data[11]);
 
             // Zeile in die Tabelle ausgeben
-            echo "<tr>
+            echo "<tr class='" . ($chessResultsMatch ? 'highlight' : '') . "'>
                 <td>{$datum}</td>
                 <td>{$zeit}</td>
                 <td>{$vorname}</td>
@@ -100,12 +135,30 @@
                 <td>{$bestaetigung}</td>
                 <td>{$agb}</td>
                 <td>{$blitzturnier}</td>
+                <td>{$chessResultsMatch}</td>
             </tr>";
         }
         fclose($handle);
     }
 
     echo '</table>';
+
+    // Liste der Spieler auf ChessResults, die nicht in der CSV sind
+    $csvNames = array_map(function ($data) {
+        return trim($data[3]) . ', ' . trim($data[2]);
+    }, array_filter(array_map('str_getcsv', file($csvFile)), fn($line) => count($line) >= 12));
+
+    $notInCsv = array_diff($webNames, $csvNames);
+    echo '<h2>Auf ChessResults gemeldet, aber nicht in der CSV-Datei:</h2>';
+    if (!empty($notInCsv)) {
+        echo '<ul>';
+        foreach ($notInCsv as $name) {
+            echo "<li>{$name}</li>";
+        }
+        echo '</ul>';
+    } else {
+        echo '<p>Alle gemeldeten Spieler sind auch in der CSV-Datei vorhanden.</p>';
+    }
     ?>
 </body>
 </html>
