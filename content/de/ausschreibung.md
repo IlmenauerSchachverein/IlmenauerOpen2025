@@ -21,7 +21,7 @@ Google Maps: [https://maps.app.goo.gl/rZMkYBArJcAaS7RU7](https://maps.app.goo.gl
 - IBAN: DE25 8405 1010 1124 0002 47
 - BIC: HELADEF1ILK
 - Kreditinstitut: Sparkasse Arnstadt-Ilmenau
-- Verwendungszweck: Spielername, Verein, OPEN2025
+- Verwendungszweck: Spielername, OPEN2025
 - 35 € (10 € Rabatt für Rentner, Studenten – mit Nachweis, U18)
 - 10 € Aufschlag für Überweisungen nach dem 01. Oktober 2025
 
