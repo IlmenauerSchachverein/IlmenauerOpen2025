@@ -1,82 +1,113 @@
-<!DOCTYPE html>
-<html lang="de">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Anmeldungen Open 2025</title>
-    <style>
-        table {
-            width: 90%;
-            margin: 20px auto;
-            border-collapse: collapse;
-            font-family: Arial, sans-serif;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-        th, td {
-            padding: 12px 15px;
-            border: 1px solid #ddd;
-            text-align: left;
-            font-size: 14px;
-        }
-        th {
-            background-color: #4CAF50;
-            color: white;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-        }
-        tr:nth-child(even) {
-            background-color: #f9f9f9;
-        }
-        tr:hover {
-            background-color: #e9e9e9;
-        }
-        .highlight {
-            background-color: #ffcccc; /* Hellrot für Übereinstimmungen */
-        }
-    </style>
-</head>
-<body>
-    <h1>Anmeldungen Open 2025</h1>
+<?php
+// Pfad zur CSV-Datei
+$csvFile = '/var/private/isv/open25.csv';
 
-    <?php
-    // Pfad zur CSV-Datei
-    $csvFile = '/var/private/isv/open25.csv';
+// URL für Chess-Results
+$chessResultsUrl = 'https://chess-results.com/tnr1056124.aspx?lan=0';
 
-    if (!file_exists($csvFile)) {
-        echo '<p style="color: red; text-align: center;">Fehler: Die CSV-Datei existiert nicht.</p>';
-        exit;
+// Überprüfung des Honeypot-Feldes
+if (!empty($_POST['honeypot'])) {
+    die('Bot-Verdacht: Die Anmeldung wurde nicht gespeichert.');
+}
+
+// Eingehende Daten validieren und bereinigen
+$vorname = htmlspecialchars(trim($_POST['vorname'] ?? ''));
+$nachname = htmlspecialchars(trim($_POST['nachname'] ?? ''));
+$verein = htmlspecialchars(trim($_POST['verein'] ?? ''));
+$geburtsdatum = htmlspecialchars(trim($_POST['geburtsdatum'] ?? ''));
+$handy = htmlspecialchars(trim($_POST['handy'] ?? ''));
+$email = htmlspecialchars(trim($_POST['email'] ?? ''));
+$rabatt = htmlspecialchars(trim($_POST['rabatt'] ?? 'nein'));
+$bestaetigung = isset($_POST['bestaetigung']) ? 'on' : 'off';
+$blitz = isset($_POST['blitz']) ? 'on' : 'off';
+$agb = isset($_POST['agb']) ? 'on' : 'off';
+
+// Validierungslogik
+$errors = [];
+if (empty($vorname)) $errors[] = 'Vorname ist erforderlich.';
+if (empty($nachname)) $errors[] = 'Nachname ist erforderlich.';
+if (empty($geburtsdatum) || !preg_match('/^\d{2}\.\d{2}\.\d{4}$/', $geburtsdatum)) {
+    $errors[] = 'Geburtsdatum ist ungültig. Format: TT.MM.JJJJ.';
+}
+if (empty($email) || !filter_var($email, FILTER_VALIDATE_EMAIL)) {
+    $errors[] = 'E-Mail-Adresse ist ungültig.';
+}
+if ($agb !== 'on') {
+    $errors[] = 'Die Zustimmung zu den Teilnahmebedingungen ist erforderlich.';
+}
+
+// Bei Fehlern: Ausgabe und Abbruch
+if (!empty($errors)) {
+    echo '<h1>Fehler bei der Anmeldung</h1>';
+    echo '<ul>';
+    foreach ($errors as $error) {
+        echo "<li>{$error}</li>";
     }
+    echo '</ul>';
+    echo '<a href="javascript:history.back()">Zurück zum Formular</a>';
+    exit;
+}
 
-    // CSV-Datei öffnen
-    $handle = fopen($csvFile, 'r');
-    if (!$handle) {
-        echo '<p style="color: red; text-align: center;">Fehler: Die CSV-Datei konnte nicht geöffnet werden.</p>';
-        exit;
+// Daten aus Chess-Results prüfen
+$chessResultsMatch = 'nein';
+$html = file_get_contents($chessResultsUrl);
+
+if ($html !== FALSE) {
+    $dom = new DOMDocument;
+    @$dom->loadHTML($html);
+    $xpath = new DOMXPath($dom);
+
+    // Finde alle Spieler aus der Chess-Results-Tabelle
+    $rows = $xpath->query("//table[@class='CRs1']//tr");
+    foreach ($rows as $index => $row) {
+        if ($index === 0) continue; // Überspringe Header-Zeile
+        $cells = $row->getElementsByTagName('td');
+        if ($cells->length >= 4) {
+            $nameFromChessResults = trim($cells->item(3)->nodeValue); // Name in der 4. Zelle
+            $fullName = "{$nachname}, {$vorname}";
+
+            // Prüfen, ob Name mit Chess-Results-Daten übereinstimmt
+            if ($nameFromChessResults === $fullName) {
+                $chessResultsMatch = 'ja';
+                break;
+            }
+        }
     }
+}
 
-    // Tabelle starten
-    echo '<table>';
-    echo '<tr><th>Vorname</th><th>Nachname</th><th>Verein</th><th>Geburtsdatum</th><th>Handynummer</th><th>E-Mail</th><th>Rabatt</th><th>Bestätigung</th><th>Blitzturnier</th><th>AGB Zustimmung</th></tr>';
+// Daten in die CSV-Datei schreiben
+$newEntry = [
+    $vorname,
+    $nachname,
+    $verein,
+    $geburtsdatum,
+    $handy,
+    $email,
+    $rabatt,
+    $bestaetigung,
+    $blitz,
+    $agb,
+    $chessResultsMatch, // Ob der Spieler bei Chess-Results gemeldet ist
+];
 
-    // Zeilen aus der CSV-Datei auslesen
-    while (($data = fgetcsv($handle, 1000, ',')) !== FALSE) {
-        echo '<tr>';
-        echo '<td>' . htmlspecialchars($data[0]) . '</td>'; // Vorname
-        echo '<td>' . htmlspecialchars($data[1]) . '</td>'; // Nachname
-        echo '<td>' . htmlspecialchars($data[2]) . '</td>'; // Verein
-        echo '<td>' . htmlspecialchars($data[3]) . '</td>'; // Geburtsdatum
-        echo '<td>' . htmlspecialchars($data[4]) . '</td>'; // Handynummer
-        echo '<td>' . htmlspecialchars($data[5]) . '</td>'; // E-Mail
-        echo '<td>' . htmlspecialchars($data[6]) . '</td>'; // Rabatt
-        echo '<td>' . htmlspecialchars($data[7]) . '</td>'; // Bestätigung
-        echo '<td>' . (isset($data[8]) && $data[8] === 'on' ? 'Ja' : 'Nein') . '</td>'; // Blitzturnier
-        echo '<td>' . htmlspecialchars($data[9]) . '</td>'; // AGB Zustimmung
-        echo '</tr>';
+// Sicherstellen, dass die CSV-Datei existiert und beschreibbar ist
+if (!file_exists($csvFile)) {
+    if (!touch($csvFile)) {
+        die('Fehler: Die CSV-Datei konnte nicht erstellt werden.');
     }
+}
+if (!is_writable($csvFile)) {
+    die('Fehler: Die CSV-Datei ist nicht beschreibbar.');
+}
 
-    // Tabelle schließen
-    echo '</table>';
+// Öffnen der CSV-Datei und Hinzufügen des neuen Eintrags
+if (($handle = fopen($csvFile, 'a')) !== FALSE) {
+    fputcsv($handle, $newEntry);
     fclose($handle);
-    ?>
-</body>
-</html>
+    echo '<h1>Anmeldung erfolgreich</h1>';
+    echo '<p>Vielen Dank für die Anmeldung!</p>';
+    echo '<a href="/register">Zurück zum Formular</a>';
+} else {
+    die('Fehler: Die CSV-Datei konnte nicht geöffnet werden.');
+}
+?>
