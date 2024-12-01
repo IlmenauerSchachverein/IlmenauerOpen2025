@@ -2,6 +2,10 @@
 public/
 resources/
 .hugo_build.lock
+/public/
+*public*
+/resources/
+*resources*
 
 # Editor
 .vscode/
@@ -9,3 +13,4 @@ resources/
 # ChessBase 
 *.ini
 *.pgi
+
