@@ -17,8 +17,8 @@ Google Maps: [https://maps.app.goo.gl/rZMkYBArJcAaS7RU7](https://maps.app.goo.gl
 - IBAN: DE25 8405 1010 1124 0002 47
 - BIC: HELADEF1ILK
 - Kreditinstitut: Sparkasse Arnstadt-Ilmenau
-- Verwendungszweck: Spielername, Verein, OPEN2025
-- 45 € (10 € Rabatt für Rentner, Studenten – mit Nachweis, U18; Geldeingang bis 13. Oktober)
+- Verwendungszweck: Spielername, OPEN2025
+- 35 € (10 € Rabatt für Rentner, Studenten – mit Nachweis, U18)
 - 10 € Aufschlag für Überweisungen nach dem 01. Oktober 2025
 
 ## Auswertung
@@ -30,15 +30,15 @@ Google Maps: [https://maps.app.goo.gl/rZMkYBArJcAaS7RU7](https://maps.app.goo.gl
 
 | Datum      | Uhrzeit      | Ereignis      |
 | ---------- | ------------ | ------------- |
-| 30.10.2025 | Bis 09:30    | Anmeldung     |
-| 30.10.2025 | 09:30        | 1. Runde      |
-| 30.10.2025 | 16:30        | 2. Runde      |
-| 31.11.2025 | 09:30        | 3. Runde      |
-| 31.11.2025 | 16:30        | 4. Runde      |
-| 31.11.2025 | 21:00        | Blitz Turnier |
-| 01.11.2025 | 09:30        | 5. Runde      |
-| 01.11.2025 | 16:30        | 6. Runde      |
-| 02.11.2025 | 09:30        | 7. Runde      |
+| 30.10.2025 | Bis 08:30    | Anmeldung     |
+| 30.10.2025 | 09:00        | 1. Runde      |
+| 30.10.2025 | 15:00        | 2. Runde      |
+| 31.11.2025 | 09:00        | 3. Runde      |
+| 31.11.2025 | 15:00        | 4. Runde      |
+| 31.11.2025 | 20:15        | Blitz Turnier |
+| 01.11.2025 | 09:00        | 5. Runde      |
+| 01.11.2025 | 15:00        | 6. Runde      |
+| 02.11.2025 | 09:00        | 7. Runde      |
 | 02.11.2025 | anschließend | Siegerehrung  |
 
 - Die Karenzzeit beträgt 30 min.
@@ -53,11 +53,10 @@ Google Maps: [https://maps.app.goo.gl/rZMkYBArJcAaS7RU7](https://maps.app.goo.gl
 | 1. Platz     | Pokal + 250 € |
 | 2. Platz     | Pokal + 150 € |
 | 3. Platz     | Pokal + 100 € |
-| 4. Platz     | 50 €          |
-| U 1800 DWZ   | 50 €          |
-| U 1600 DWZ   | 50 €          |
-| U 1400 DWZ   | 50 €          |
-| U 1200 DWZ   | 50 €          |
+| U 1800 TWZ   | 50 €          |
+| U 1600 TWZ   | 50 €          |
+| U 1400 TWZ   | 50 €          |
+| U 1200 TWZ   | 50 €          |
 | 1. Platz U18 | Pokal         |
 | 1. Ilmenauer | Pokal         |
 | Held         | Pokal         |
@@ -77,6 +76,10 @@ Google Maps: [https://maps.app.goo.gl/rZMkYBArJcAaS7RU7](https://maps.app.goo.gl
 - Mit der Anmeldung wird einer Photoerlaubnis zugestimmt.
 - Formular für die Anmeldung: [Anmeldung](https://open25.ilmenauer-schachverein.de/anmeldung/)
 
+## Rückerstattung
+
+Sollte sich ein Spieler vom Turnier vor Turnierbeginn abmelden, wird eine Bearbeitungsgebühr von 10 Euro erhoben und der restliche Beitrag nach dem Turnier zurücküberwiesen.
+
 ## Kontakt
 
 Das 2. Ilmenauer Open 2025 und das 2. Ilmenauer Open Blitz 2025 sind Turniere, die vom [Ilmenauer SV](https://ilmenauer-schachverein.de) organisiert werden.
@@ -85,4 +88,3 @@ Das 2. Ilmenauer Open 2025 und das 2. Ilmenauer Open Blitz 2025 sind Turniere, d
 
 - E-Mail: [info@ilmenauer-schachverein.de](mailto:info@ilmenauer-schachverein.de)
 - Adresse: Ehrenbergstraße 29, 98693 Ilmenau
-
