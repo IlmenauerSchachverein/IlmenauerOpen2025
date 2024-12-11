@@ -53,6 +53,9 @@ menu:
       params:
         icon: instagram
 
+services:
+  googleAnalytics:
+    ID: G-BJXQMHP1DV
 params:
   disableToc: true
   navbar:
